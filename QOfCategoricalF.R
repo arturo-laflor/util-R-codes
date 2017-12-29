@@ -1,12 +1,7 @@
-#Autor: Arturo Jesús Laflor Hernández
-#Fecha: 23-03-2017
-#Descripción: Genera una tabla con información para el análisis de 
-#calidad de un dataframe con variables categóricas
 QOfCategoricalF=function(datasetCF){
   #codigo para hacer las pruebas
   #datasetCF<- cbind.data.frame(Genero=d_preproc[,3],d_preproc[,26:30],CofS=d_preproc[,57])
-  
-  #datasetCF<-responses[,28:48]
+  # datasetCF<-daterror
   
   calc_mode=function(x,primsec=1){
     #temp<-table(datasetC$SH3)
@@ -34,12 +29,18 @@ QOfCategoricalF=function(datasetCF){
   Mode2Frec<-apply(datasetCF,2, FUN=calc_frecmode,primsec=2)
   Mode2Perc<-paste(round(Mode2Frec/Count*100,digits = 2),"%",sep = "")
   
+  
+  
+  
   # #calcula moda de una columna
   # getmode <- function(v) {
   #   uniqv <- unique(datasetCF$SH1)
   #   m<-uniqv[which.max(tabulate(match(datasetCF$Genero, uniqv)))]
   # }
   
-  TQCategoricalFeatures<-data.frame(Count,Miss,Card,Mode,ModeFrec,ModePerc,Mode2,Mode2Frec,Mode2Perc)
+  
+  TQCategoricalFeatures<-data.frame(as.character(Count),as.character(Miss),as.character(Card)
+                                    ,as.character(Mode),as.character(ModeFrec),as.character(ModePerc),
+                                    as.character(Mode2),as.character(Mode2Frec),as.character(Mode2Perc))
   
 }
