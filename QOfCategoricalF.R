@@ -39,8 +39,9 @@ QOfCategoricalF=function(datasetCF){
   # }
   
   
-  TQCategoricalFeatures<-data.frame(as.character(Count),as.character(Miss),as.character(Card)
-                                    ,as.character(Mode),as.character(ModeFrec),as.character(ModePerc),
-                                    as.character(Mode2),as.character(Mode2Frec),as.character(Mode2Perc))
+  TQCategoricalFeatures<-data.frame(Count=as.character(Count),Miss=as.character(Miss),Card=as.character(Card)
+                                    ,Mode=as.character(Mode),ModeFrec=as.character(ModeFrec),ModePerc=as.character(ModePerc),
+                                    Mode2=as.character(Mode2),Mode2Frec=as.character(Mode2Frec),Mode2Perc=as.character(Mode2Perc))
+  
   
 }
